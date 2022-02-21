@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafío 1</title>
+</head>
+<body>
+    <h1>
+        Codea like a champion 🏍️💨
+    </h1>
+    <script>
+        console.log('👋🏼👋🏼 Me ves en la terminal del browser');
+        class Usuario {
+            constructor(nombre, apellido, mascotas, libros) {
+                this.nombre = nombre;
+                this.apellido = apellido;
+                this.libros = libros;
+                this.mascotas = mascotas;
+            }
+            getFullName() {
+
+                return (`Nombre y Apellido : ${this.nombre} ${this.apellido}`);
+            }
+            addMascota(mascota) {
+                this.mascotas.push(mascota)
+            }
+            countMascotas() {
+                return (this.mascotas.length)
+            }
+            addBook(nombre, autor) {
+                this.libros.push({ nombre: nombre, autor: autor })
+            }
+            getBooks() {
+                let nombresLibros = this.libros.map(function (x) {
+                    return x.nombre;
+                });
+                return (nombresLibros)
+            }
+        }
+        let Juan = new Usuario('Juan', 'Gonzales', ['perro', 'tortuga', 'canario'], [{ nombre: 'Cien años de soledad', autor: 'Gabriel García Márquez' }, { nombre: 'Fausto', autor: 'Johann Wolfgang von Goethe' }]);
+        let Carlos = new Usuario('Carlos', 'Perez', ['gato', 'hamster'], [{ nombre: 'Cuentos infantiles', autor: 'Chinua Achebe' }, { nombre: 'Divina Comedia', autor: 'Dante Alighieri' }, { nombre: 'El extranjero', autor: 'Albert Camus' }]);
+        let Mariana = new Usuario('Mariana', 'Rodriguez', ['loro', 'perro', 'gato'], [{ nombre: 'Don Quijote de la Mancha', autor: 'Miguel de Cervantes' }, { nombre: 'Grandes Esperanzas', autor: 'Charles Dickens' }]);
+        console.log(Juan.getFullName())
+        Juan.addMascota('conejo')
+        console.log(Juan.countMascotas())
+        Juan.addBook('El hombre invisible', 'Ralph Ellison')
+        console.log(Juan.getBooks())
+    </script>
+</body>
+</html>
